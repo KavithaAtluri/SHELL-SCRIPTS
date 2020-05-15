@@ -14,4 +14,4 @@ case $ACTION in
         echo -e "Expected inputs are \e [1mstart/stop\e[0m"
         exit 1
         ;;
-esae
+esac
