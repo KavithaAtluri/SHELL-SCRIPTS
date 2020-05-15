@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo Hello
-exit 0
+exit 100
 echo Bye
