@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source `pwd`/.deps
+source .deps
 
-echo -e "${RB} Hello from Nginx${N}"
+echo -e "${RB} Hello from Nginx ${N}"
