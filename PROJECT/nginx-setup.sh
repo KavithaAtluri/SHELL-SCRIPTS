@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo -e "\e[33m Hello from Nginx"
+source `pwd`/.deps
+
+echo -e "${YB} Hello from Nginx${N}"
