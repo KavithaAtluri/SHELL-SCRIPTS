@@ -2,4 +2,4 @@
 
 source `pwd`/.deps
 
-echo -e "${YB} Hello from Nginx${N}"
+echo -e "${RB} Hello from Nginx${N}"
