@@ -1,5 +1,8 @@
 #!/bin/bash
 
+LOG=/tmp/web.log 
+rm -f $LOG
+
 source `pwd`/.deps
 
 <<COMMENT
@@ -9,3 +12,12 @@ echo -e "\e[33m Hello from Nginx"
 COMMENT
 
 Head "NGINX/ WEB SETUP"
+BPerform "Installing Nginx WebServer"
+yum install Nginx -y &>>$LOG
+
+if [ $? -eq 0 ]; then
+    echo "${GB}Successfully installed Nginx Server${N}"
+else
+    echo "${RB}Failed to install Nginx Server${N}"
+    exit 1
+fi
