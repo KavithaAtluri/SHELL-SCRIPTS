@@ -27,5 +27,11 @@ curl -s https://studentapi-cit.s3-us-west-2.amazonaws.com/studentapp-frontend.ta
 Stat $? "Download Nginx Web Content"
 
 BPerform "Updating Nginx Config"
-sed -i.bak -e '/^        error_page 404 /i \\tlocation /student {\n\t\tproxy_pass http://localhost:8080/student\n\t}\n ' /etc/nginx/nginx.conf
-Stat $? "Update Nginx Congig"
+sed -i -e '/location \/student/,+2 d' /etc/nginx/nginx.conf
+sed -i.bak -e '/^        error_page 404 /i \\tlocation /student {\n\t\tproxy_pass http://localhost:8080/student;\n\t}\n ' /etc/nginx/nginx.conf
+Stat $? "Update Nginx Config"
+
+BPerform "Start Nginx Service"
+systemctl enable nginx &>>$LOG
+systemctl start nginx &>>$LOG
+Stat $? "Start Nginx Service"
