@@ -23,5 +23,9 @@ Stat $? "Clean Old Web Content"
 
 cd /usr/share/nginx/html/
 BPerform "Download Web Content"
-curl -s https://studentapi-cit.s3-us-west-2.amazonaws.com/studentapp-frontend.tar.g 2>>$LOG | tar -xz &>>$LOG
+curl -s https://studentapi-cit.s3-us-west-2.amazonaws.com/studentapp-frontend.tar.gz 2>>$LOG | tar -xz &>>$LOG
 Stat $? "Download Nginx Web Content"
+
+BPerform "Updating Nginx Config"
+sed -i.bak -e '/^        error_page 404 /i \\tlocation /student {\n\t\tproxy_pass http://localhost:8080/student\n\t}\n ' /etc/nginx/nginx.conf
+Stat $? "Update Nginx Congig"
