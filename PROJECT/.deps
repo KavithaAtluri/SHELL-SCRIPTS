@@ -29,4 +29,4 @@ Stat(){
         echo -e " Check og file for more information, logfile - $LOG"
         exit 1
     fi
-    
+}
