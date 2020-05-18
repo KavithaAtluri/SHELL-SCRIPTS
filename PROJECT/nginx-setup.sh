@@ -13,11 +13,6 @@ COMMENT
 
 Head "NGINX/ WEB SETUP"
 BPerform "Installing Nginx WebServer"
-yum install nginx -y &>>$LOG
+yum install Nginx -y &>>$LOG
 
-if [ $? -eq 0 ]; then
-    echo -e "${GB}Successfully installed Nginx Server${N}"
-else
-    echo -e "${RB}Failed to install Nginx Server${N}"
-    exit 1
-fi
+Stat $? "Nginx Installation"
