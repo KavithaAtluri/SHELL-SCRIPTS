@@ -13,6 +13,6 @@ COMMENT
 
 Head "NGINX/ WEB SETUP"
 BPerform "Installing Nginx WebServer"
-yum install Nginx -y &>>$LOG
+yum install nginx -y &>>$LOG
 
 Stat $? "Nginx Installation"

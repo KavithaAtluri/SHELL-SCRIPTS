@@ -26,7 +26,7 @@ Stat(){
         echo -e "\t${GB}✓ $2 is SUCCESS${N}"
     else
         echo -e "\t${RB}✗ $2 is failure${N}"
-        echo -e " Check og file for more information, logfile - $LOG"
+        echo -e " Check log file for more information, logfile - $LOG"
         exit 1
     fi
 }
