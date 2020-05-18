@@ -23,5 +23,5 @@ Stat $? "Clean Old Web Content"
 
 cd /usr/share/nginx/html/
 BPerform "Download Web Content"
-curl -s https://studentapi-cit.s3-us-west-2.amazonaws.com/studentapp-frontend.tar.gz | tar -xz
+curl -s https://studentapi-cit.s3-us-west-2.amazonaws.com/studentapp-frontend.tar.g 2>>$LOG | tar -xz &>>$LOG
 Stat $? "Download Nginx Web Content"
