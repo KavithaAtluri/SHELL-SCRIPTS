@@ -16,3 +16,7 @@ BPerform "Installing Nginx WebServer"
 yum install nginx -y &>>$LOG
 
 Stat $? "Nginx Installation"
+
+BPerform "Clean Old Web Content"
+rm -rf /usr/share/nginx/html/* &>>$LOG
+Stat $? "Clean Old Web Content"
