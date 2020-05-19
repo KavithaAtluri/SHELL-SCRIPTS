@@ -50,7 +50,7 @@ BPerform "Download Tomcat Init script"
 curl -v -s -o /etc/init.d/tomcat https://s3-us-west-2.amazonaws.com/studentapi-cit/tomcat-init &>>$LOG
 Stat $? "Downloading Tomcat Init script"
 
-chmod -x /etc/init.d/tomcat
+chmod +x /etc/init.d/tomcat
 
 BPerform "Start Tomcat Server"
 systemctl daemon-reload &>>$LOG
