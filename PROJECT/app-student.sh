@@ -18,5 +18,5 @@ else
 fi
 
 BPerform "Install Java"
-yum install java -y
+yum install java -y &>>$LOG
 Stat $? "Installing Java"
