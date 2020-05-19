@@ -16,3 +16,7 @@ else
     useradd $APPUSER &>>$LOG
     Stat $? "Application User Creation"
 fi
+
+BPerform "Install Java"
+yum install java -y
+Stat $? "Installing Java"
