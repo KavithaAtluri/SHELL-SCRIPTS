@@ -25,5 +25,5 @@ Stat $? "Installing Java"
 
 BPerform "Downloading Tomcat"
 cd /home/$APPUSER
-curl -s https://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT-VERSION}/bin/apache-tomcat-${TOMCAT-VERSION}.tar.gz 2>>&LOG| tar -xz &>>$LOG 
+curl -s https://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT-VERSION}/bin/apache-tomcat-${TOMCAT-VERSION}.tar.gz 2>>$LOG| tar -xz &>>$LOG 
 Stat $? "Downloading Tomcat"
